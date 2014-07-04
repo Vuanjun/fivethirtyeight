@@ -1,0 +1,41 @@
+%helvetica {
+  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal;
+}
+
+body {
+  @extend %helvetica;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $text-black;
+}
+
+
+#{headings()} {
+  @include reset-box-model;
+}
+
+a {
+  @include link-colors($text-black, blue, red);
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+p {
+  @include trailer(1);
+}
+
+h3{
+  @include adjust-font-size-to(40px, 2);
+}
+
+h4{
+  @include adjust-font-size-to(22px, 1);
+}
+
+p{
+  @include adjust-font-size-to(16px, 0.8);
+}

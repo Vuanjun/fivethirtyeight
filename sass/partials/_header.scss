@@ -1,0 +1,11 @@
+.header{
+  height: 40px;
+  width: 100%;
+  @include box-sizing(border-box);
+  text-align: left;
+  padding: 10px 0;
+  a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

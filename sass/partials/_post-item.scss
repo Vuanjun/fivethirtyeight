@@ -1,0 +1,88 @@
+.post-item {
+  @include trailer(2);
+  &:nth-child(3n+1) {
+
+  }
+  .photo  {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    text-align: center;
+    display: block;
+    background-color: #eeeeee;
+    img {
+      position:absolute;
+      top:0;
+      left:0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .title {
+    @include link-colors($text-black, #1C62CA, #BF2613);
+    display: block;
+    @include adjust-font-size-to(22px, 1);
+    font-weight: bold;
+    color: $text-black-dark;
+  }
+  span.author {
+    @include adjust-font-size-to(11px);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .meta {
+    @include adjust-font-size-to(11px);
+    span.count {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    span.site {
+      margin-right: 10px;
+    }
+    span.category {
+      margin-right: 10px;
+    }
+  }
+  .text {
+    @include adjust-font-size-to(14px, 3/4);
+  }
+  .social-links{
+    a{
+      @include adjust-font-size-to(11px);
+      color: #9F9F9F;
+      background-color: #F7F7F7;
+      margin-right: 15px;
+      padding: 0 6px;
+      display: inline-block;
+      &:hover{
+        background-color: #D7D7D7;
+      }
+    }
+    margin: 20px 0;
+  }
+
+  @include at-breakpoint($pad) {
+    @include isolate-grid(8);
+    .photo{
+      @include span-columns(3, 8);
+    }
+    .intro-group{
+      @include span-columns(5 omega, 8);
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    @include isolate-grid(4);
+    .photo {
+      width: auto;
+      float: none;
+      margin-right: 0;
+    }
+    .intro-group {
+      width: auto;
+      float: none;
+    }
+  }
+}
+
